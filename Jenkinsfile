@@ -15,7 +15,7 @@ pipeline {
         userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA--groupworkRevised23Jan']]
     ])
            	checkout scm
-		echo "Done scm"
+		echo 'Done scm'
         }
     }
 		
@@ -26,7 +26,7 @@ pipeline {
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
 		}}
 	
-			echo "Done Build"  
+			echo 'Done Build'  
 	
 	stage("Cucumber Report"){
 		steps{
@@ -40,6 +40,7 @@ pipeline {
 		cucumber buildStatus: "UNSTABLE",
 		fileIncludePattern: "**/*.json",
                 jsonReportDirectory: 'target/JSonReports.json'}}
+	    echo 'Done Cucumber reports'
 
 }
 
