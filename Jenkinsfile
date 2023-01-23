@@ -13,9 +13,10 @@ pipeline {
         extensions: [[$class: 'CloneOption', timeout: 120]],
         gitTool: 'Default', 
         userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA--groupworkRevised23Jan']]
+		  echo 'Done scm'
     ])
            	checkout scm
-		echo 'Done scm'
+		
         }
     }
 		
@@ -24,9 +25,10 @@ pipeline {
         withMaven {
       	bat "mvn clean verify"
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
+			echo 'Done Build'
 		}}
 	
-			echo 'Done Build'  
+			  
 	
 	stage("Cucumber Report"){
 		steps{
@@ -36,11 +38,12 @@ pipeline {
         	extensions: [[$class: 'CloneOption', timeout: 120]],
         	gitTool: 'Default', 
         	userRemoteConfigs: [['https://github.com/preetidogra/ATA--groupworkRevised23Jan']]
-			 ]) 
+			
+			   echo 'Done Cucumber reports']) 
 		cucumber buildStatus: "UNSTABLE",
 		fileIncludePattern: "**/*.json",
                 jsonReportDirectory: 'target/JSonReports.json'}}
-	    echo 'Done Cucumber reports'
+	  
 
 }
 
