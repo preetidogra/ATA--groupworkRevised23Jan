@@ -25,7 +25,7 @@ pipeline {
         withMaven {
       	bat "mvn clean verify"
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
-			[echo 'Done Build']
+			
 		}}
 	
 			  
@@ -39,7 +39,7 @@ pipeline {
         	gitTool: 'Default', 
         	userRemoteConfigs: [['https://github.com/preetidogra/ATA--groupworkRevised23Jan']]
 			
-			   echo 'Done Cucumber reports']) 
+			   ]) 
 		cucumber buildStatus: "UNSTABLE",
 		fileIncludePattern: "**/*.json",
                 jsonReportDirectory: 'target/JSonReports.json'}}
