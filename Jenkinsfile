@@ -13,7 +13,7 @@ pipeline {
         extensions: [[$class: 'CloneOption', timeout: 120]],
         gitTool: 'Default', 
         userRemoteConfigs: [[url: 'https://github.com/preetidogra/ATA--groupworkRevised23Jan']]
-		  echo 'Done scm']
+		  echo 'Done scm'
     ])
            	checkout scm
 		
