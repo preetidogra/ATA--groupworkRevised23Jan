@@ -58,7 +58,7 @@ public void text_is_visible() {
 	//String expectedTitle = "SwagLabs";
 	
 	//Assert.areEquals(actualTitle, expectedTitle);
-	driver.getPageSource().contains("© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy");
+	//driver.getPageSource().contains("© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy");
     System.out.println(actualTitle); 
     
 
